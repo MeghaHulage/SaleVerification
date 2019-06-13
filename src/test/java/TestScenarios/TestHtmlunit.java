@@ -62,7 +62,7 @@ public class TestHtmlunit {
 			WebDriver driver = new HtmlUnitDriver();
 			driver.manage().deleteAllCookies();
 			
-			driver.get("https://hamernicks.com/site-map/");
+			driver.get("https://colorinteriors.com/site-map/");
 			
 			
 			java.util.List<WebElement> links = driver.findElements(By.tagName("a"));
