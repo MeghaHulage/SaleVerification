@@ -49,7 +49,7 @@ List<String> newList = new ArrayList<String>();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(40,TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-		driver.get("https://brandtcarpet-stg.mm-dev.agency/sitemap/");
+		driver.get("https://colorinteriors.com/site-map/");
 		
 		
 		
