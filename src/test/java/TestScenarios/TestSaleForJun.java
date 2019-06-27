@@ -64,7 +64,7 @@ public class TestSaleForJun {
 			WebDriver driver = new HtmlUnitDriver();
 			driver.manage().deleteAllCookies();
 			
-			driver.get("https://brandtcarpet-stg.mm-dev.agency/sitemap/");
+			driver.get("https://pdjflooring.com/site-map/");
 			
 			
 			java.util.List<WebElement> links = driver.findElements(By.tagName("a"));
