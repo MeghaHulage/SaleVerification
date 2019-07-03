@@ -44,7 +44,7 @@ public class JulySaleCouponVerification {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(40,TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-			driver.get("https://hamernicks.com/site-map/");
+			driver.get("https://choicefloorcenter.com/");
 			
 			
 			

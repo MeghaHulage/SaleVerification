@@ -19,7 +19,7 @@ public class CheckGTMKOI {
 		driver=new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.get("https://royalflooring-stg.mm-dev.agency/");
+		driver.get("https://metroflooring.net/");
 		
 	}
 	

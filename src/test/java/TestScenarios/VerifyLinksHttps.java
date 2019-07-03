@@ -60,7 +60,7 @@ public class VerifyLinksHttps {
 		  System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 			driver= new ChromeDriver();
 			
-			driver.get("https://shoproyalflooring.com/");
+			driver.get("https://thepremierefloors.com/");
 	  }
 	  
 
