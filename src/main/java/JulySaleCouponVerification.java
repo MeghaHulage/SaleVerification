@@ -61,7 +61,7 @@ public class JulySaleCouponVerification {
 			 {
 				 String tagaurl=links.get(k).getAttribute("href");
 				
-				// System.out.println(tagaurl);
+				//System.out.println(tagaurl);
 				// System.out.println("****************************************");
 				
 				 addallaTagUrl.add(tagaurl);
