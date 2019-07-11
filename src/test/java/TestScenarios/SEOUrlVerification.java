@@ -12,27 +12,31 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class TestSrcUrl {
+public class SEOUrlVerification {
 	
 	WebDriver driver;
+	//List<String> allurls= new ArrayList<String>();
+	//List<String> sortedurls = new ArrayList<String>();
 	List<String> addallaTagUrl = new ArrayList<String>();
 	List<String> newList = new ArrayList<String>();
-		@BeforeTest
-		public void setUp() {
-			
-			System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
-			driver=new ChromeDriver();
-			driver.manage().deleteAllCookies();
-			driver.manage().window().maximize();
-			//driver.get("https://colorinteriors.com/");
-	    
-			
-		}
+	
+	String locationName= "Comstock Park, MI";
+	
+	@BeforeTest
+	public void setUp() {
 		
-		@Test(priority=0)
-		public void verifyGTM() throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
+		driver= new ChromeDriver();
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
 			
-			try {
+	}
+	
+	@Test
+	public void verifySEO() {
+		
+	
+		try {
 			
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			
@@ -45,8 +49,7 @@ public class TestSrcUrl {
 			 {
 				 String tagaurl=links.get(k).getAttribute("href");
 				
-				// System.out.println(tagaurl);
-				// System.out.println("****************************************");
+				
 				
 				 addallaTagUrl.add(tagaurl);
 				 
@@ -65,63 +68,51 @@ public class TestSrcUrl {
 			 
 			 for(int i=0;i<newList.size();i++) {
 				 
-				 //System.out.println("Url to launch"+addallaTagUrl.get(i));
-				 //Thread.sleep(1000);
-				// if(!newList.get(i).startsWith("tel:")) {
+				
 				 
 				 if(newList.get(i).startsWith("https://westrivercarpets.com/")) {
-					 
-					 
 				 driver.get(newList.get(i));
 				// Thread.sleep(2000);
 				System.out.println("Url Launched : "+newList.get(i));
-				
-				java.util.List<WebElement> srclinks = driver.findElements(By.tagName("img"));
-				
-				for(int j=0;j<srclinks.size();j++) {
+				//String title = driver.getTitle();
+			
+				 Boolean SEOcheck=driver.getTitle().contains(locationName);
+			
+				 
+				 if(SEOcheck){
+					 
+					 System.out.println("shows window title :"+ driver.getTitle());
+						System.out.println("SEO Pass on URL  " );
+						 System.out.println("_____________________________________________________");
+						
 					
-					String srcurl= srclinks.get(j).getAttribute("src");
-					
-					if(srcurl.startsWith("https://westrivercarpets.com/") ||srcurl.startsWith("https://mobilem.liquifire.com")||srcurl.startsWith("https://mmllc")) {
-					
-						//https://mobilem.liquifire.com
-						//||srcurl.startsWith("https://mmllc-images.s3.amazonaws.com/")
-						
-						//System.out.println("Src image starts with domain :"+srcurl);
-						
-						
-						
+					   
 					}else {
 						
-						System.out.println("Src image not starts with domain :"+srcurl);
+						
+					
+						System.out.println("shows window title :"+ driver.getTitle());
+						System.out.println("SEO Fail on URL  ");
+						 System.out.println("_____________________________________________________");
+						
 					}
-				}
-				
-				
-			
-				
 				 }
 				 }
-			
 			// }
 		}catch(Exception e) {
 			 e.printStackTrace();
 			 
 		 }
-		}
-		
-			
-
-			
-			
 		
 		
-		@AfterTest
-		public void tearDown() {
-			
-			driver.close();
-		}
 		
-
+		
+		
+	}
+	
+	@AfterTest
+	public void tearDown() {
+		
+	}
 
 }
