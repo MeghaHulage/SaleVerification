@@ -37,7 +37,7 @@ List<String> newList = new ArrayList<String>();
 		
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		
-		driver.get("https://westrivercarpets.com/");
+		driver.get("https://speersroadbroadloom.com/");
 		
 		java.util.List<WebElement> links = driver.findElements(By.tagName("a"));
 		

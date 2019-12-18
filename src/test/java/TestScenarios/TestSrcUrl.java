@@ -36,7 +36,7 @@ public class TestSrcUrl {
 			
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			
-			driver.get("https://westrivercarpets.com/");
+			driver.get("https://westportflooringandinteriors.com/");
 			
 			java.util.List<WebElement> links = driver.findElements(By.tagName("a"));
 			
@@ -69,7 +69,7 @@ public class TestSrcUrl {
 				 //Thread.sleep(1000);
 				// if(!newList.get(i).startsWith("tel:")) {
 				 
-				 if(newList.get(i).startsWith("https://westrivercarpets.com/")) {
+				 if(newList.get(i).startsWith("https://westportflooringandinteriors.com/")) {
 					 
 					 
 				 driver.get(newList.get(i));
@@ -82,7 +82,7 @@ public class TestSrcUrl {
 					
 					String srcurl= srclinks.get(j).getAttribute("src");
 					
-					if(srcurl.startsWith("https://westrivercarpets.com/") ||srcurl.startsWith("https://mobilem.liquifire.com")||srcurl.startsWith("https://mmllc")) {
+					if(srcurl.startsWith("https://westportflooringandinteriors.com/") ||srcurl.startsWith("https://mobilem.liquifire.com")||srcurl.startsWith("https://mmllc")) {
 					
 						//https://mobilem.liquifire.com
 						//||srcurl.startsWith("https://mmllc-images.s3.amazonaws.com/")

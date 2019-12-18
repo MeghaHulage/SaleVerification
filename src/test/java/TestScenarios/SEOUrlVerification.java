@@ -20,7 +20,7 @@ public class SEOUrlVerification {
 	List<String> addallaTagUrl = new ArrayList<String>();
 	List<String> newList = new ArrayList<String>();
 	
-	String locationName= "Comstock Park, MI";
+	String locationName= "Denver, NC";
 	
 	@BeforeTest
 	public void setUp() {
@@ -40,7 +40,7 @@ public class SEOUrlVerification {
 			
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			
-			driver.get("https://westrivercarpets.com/");
+			driver.get("https://westportflooringandinteriors.com/");
 			
 			java.util.List<WebElement> links = driver.findElements(By.tagName("a"));
 			
@@ -70,7 +70,7 @@ public class SEOUrlVerification {
 				 
 				
 				 
-				 if(newList.get(i).startsWith("https://westrivercarpets.com/")) {
+				 if(newList.get(i).startsWith("https://westportflooringandinteriors.com/")) {
 				 driver.get(newList.get(i));
 				// Thread.sleep(2000);
 				System.out.println("Url Launched : "+newList.get(i));
